@@ -85,12 +85,13 @@
                 <a href="#experience" class="hover:text-cyber-cyan transition-colors">./experience</a>
                 <a href="#portfolio" class="hover:text-cyber-cyan transition-colors">./portfolio</a>
                 <a href="#skills" class="hover:text-cyber-cyan transition-colors">./skills</a>
+                <a href="#contact" class="hover:text-cyber-cyan transition-colors">./contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="min-h-screen flex flex-col justify-center items-start max-w-6xl mx-auto px-4 pt-20">
+    <header id="about" class="min-h-screen flex flex-col justify-center items-start max-w-6xl mx-auto px-4 pt-20">
         <p class="text-cyber-cyan mb-4">SYSTEM INITIATED. USER AUTHENTICATED.</p>
         <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white">
             I am <span class="neon-text-cyan">phileory</span>
@@ -105,7 +106,8 @@
             <a href="#portfolio" class="px-6 py-3 border border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-cyber-dark transition-all duration-300 font-bold uppercase tracking-wider text-sm">
                 Execute: View_Portfolio
             </a>
-            <a href="mailto:muhammad.luthfi.chani@gmail.com" class="px-6 py-3 border border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-sm">
+            <!-- Tombol kontak yang sudah diubah arahnya ke #contact -->
+            <a href="#contact" class="px-6 py-3 border border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-sm">
                 Ping: Contact_Me
             </a>
         </div>
@@ -244,6 +246,31 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 max-w-6xl mx-auto px-4 border-t border-cyber-cyan/20">
+        <h2 class="text-3xl font-bold mb-10 neon-text-purple">> establish_connection()</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Email -->
+            <a href="mailto:muhammad.luthfi.chani@gmail.com" target="_blank" class="cyber-card p-6 rounded-lg text-center group cursor-pointer border-cyber-cyan/30 hover:border-cyber-cyan">
+                <p class="text-cyber-cyan font-bold mb-2 group-hover:neon-text-cyan">[EMAIL]</p>
+                <p class="text-sm text-cyber-gray">muhammad.luthfi.chani@gmail.com</p>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/phileory" target="_blank" class="cyber-card p-6 rounded-lg text-center group cursor-pointer border-cyber-purple/30 hover:border-cyber-purple">
+                <p class="text-cyber-purple font-bold mb-2 group-hover:neon-text-purple">[LINKEDIN]</p>
+                <p class="text-sm text-cyber-gray">linkedin.com/in/phileory</p>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6285750442636" target="_blank" class="cyber-card p-6 rounded-lg text-center group cursor-pointer border-cyber-cyan/30 hover:border-cyber-cyan">
+                <p class="text-cyber-cyan font-bold mb-2 group-hover:neon-text-cyan">[WHATSAPP]</p>
+                <p class="text-sm text-cyber-gray">+62 857 5044 2636</p>
+            </a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="py-8 text-center border-t border-cyber-cyan/20 text-cyber-gray text-sm">
         <p>STATUS: ONLINE | LOCATION: PONTIANAK, ID</p>
@@ -252,7 +279,7 @@
 
     <!-- Typewriter Script -->
     <script>
-        const words = ["Wildlife Crime Investigator", "OSINT Specialist", "IWT Data Analyst"];
+        const words = ["Wildlife Crime Investigator", "OSINT Specialist", "Data Analyst", "Ecologist"];
         let i = 0;
         let j = 0;
         let currentWord = "";
