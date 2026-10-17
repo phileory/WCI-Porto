@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phileory | Digital Intelligence & Investigator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#050b14',
+                            cyan: '#00f0ff',
+                            purple: '#b026ff',
+                            gray: '#8a99a8',
+                            panel: 'rgba(10, 20, 35, 0.8)'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050b14;
+            color: #e2e8f0;
+            /* Cyber Grid Background */
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-attachment: fixed;
+        }
+        
+        .neon-text-cyan {
+            color: #00f0ff;
+            text-shadow: 0 0 5px rgba(0, 240, 255, 0.5), 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .neon-text-purple {
+            color: #b026ff;
+            text-shadow: 0 0 5px rgba(176, 38, 255, 0.5);
+        }
+
+        .cyber-card {
+            background: rgba(10, 20, 35, 0.85);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+        }
+
+        .cyber-card:hover {
+            border-color: #00f0ff;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Typewriter Cursor */
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050b14; }
+        ::-webkit-scrollbar-thumb { background: #00f0ff; border-radius: 4px; }
+    </style>
+</head>
+<body class="font-mono antialiased selection:bg-cyber-cyan selection:text-cyber-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-cyber-dark/90 border-b border-cyber-cyan/30 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold neon-text-cyan">> phileory_</a>
+            <div class="hidden md:flex gap-6 text-sm">
+                <a href="#about" class="hover:text-cyber-cyan transition-colors">./about</a>
+                <a href="#experience" class="hover:text-cyber-cyan transition-colors">./experience</a>
+                <a href="#portfolio" class="hover:text-cyber-cyan transition-colors">./portfolio</a>
+                <a href="#skills" class="hover:text-cyber-cyan transition-colors">./skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center items-start max-w-6xl mx-auto px-4 pt-20">
+        <p class="text-cyber-cyan mb-4">SYSTEM INITIATED. USER AUTHENTICATED.</p>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white">
+            I am <span class="neon-text-cyan">phileory</span>
+        </h1>
+        <div class="text-xl md:text-3xl text-cyber-gray mb-8 h-10">
+            > <span id="typewriter" class="cursor neon-text-purple"></span>
+        </div>
+        <p class="max-w-2xl text-cyber-gray leading-relaxed mb-10">
+            Biology graduate and specialized Wildlife Crime Investigator with 2+ years of hands-on experience in field research, criminal intelligence analysis, and inter-agency law enforcement collaboration. Proven track record in combating illegal wildlife and forestry crimes through data-driven approaches and Open-Source Intelligence (OSINT).
+        </p>
+        <div class="flex gap-4">
+            <a href="#portfolio" class="px-6 py-3 border border-cyber-cyan text-cyber-cyan hover:bg-cyber-cyan hover:text-cyber-dark transition-all duration-300 font-bold uppercase tracking-wider text-sm">
+                Execute: View_Portfolio
+            </a>
+            <a href="mailto:muhammad.luthfi.chani@gmail.com" class="px-6 py-3 border border-cyber-purple text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-sm">
+                Ping: Contact_Me
+            </a>
+        </div>
+    </header>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 max-w-6xl mx-auto px-4 border-t border-cyber-cyan/20">
+        <h2 class="text-3xl font-bold mb-10 neon-text-cyan">> system.read(experience)</h2>
+        
+        <div class="space-y-8 border-l-2 border-cyber-cyan/30 pl-6 ml-2">
+            <!-- Planet Indonesia -->
+            <div class="relative">
+                <div class="absolute -left-[33px] top-0 w-4 h-4 bg-cyber-dark border-2 border-cyber-cyan rounded-full"></div>
+                <div class="cyber-card p-6 rounded-lg">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Wildlife Trade Unit Staff</h3>
+                        <span class="text-cyber-cyan text-sm">Sep 2024 - Sep 2026</span>
+                    </div>
+                    <p class="text-cyber-purple mb-4">Yayasan Planet Indonesia</p>
+                    <ul class="list-disc list-outside ml-4 text-cyber-gray text-sm space-y-2">
+                        <li>Supported critical criminal intelligence to Polres Sanggau, leading to law enforcement actions against illegal wildlife traders (106.5 kg of pangolin scales).</li>
+                        <li>Delivered OSINT and target profiling to Gakkum Kehutanan for covert surveillance, successfully intercepting illegal pangolin scale traffickers in Sintang.</li>
+                        <li>Conducted court monitoring using the Case Tracking System (SIPP) and served as a case witness in criminal court proceedings.</li>
+                        <li>Executed joint cross-border patrols with Sarawak Forestry Corporation (SFC) and BKSDA Kalbar to combat transnational wildlife trafficking.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Univ of Leeds -->
+            <div class="relative">
+                <div class="absolute -left-[33px] top-0 w-4 h-4 bg-cyber-dark border-2 border-cyber-purple rounded-full"></div>
+                <div class="cyber-card p-6 rounded-lg">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Project Co-Facilitator</h3>
+                        <span class="text-cyber-purple text-sm">Dec 2022</span>
+                    </div>
+                    <p class="text-cyber-purple mb-4">University of Leeds</p>
+                    <ul class="list-disc list-outside ml-4 text-cyber-gray text-sm space-y-2">
+                        <li>Facilitated audiency towards law enforcement institutions regarding the role of Artificial Intelligence (AI) algorithms in preventing illegal bird trade cases.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 max-w-6xl mx-auto px-4 border-t border-cyber-cyan/20">
+        <h2 class="text-3xl font-bold mb-10 neon-text-cyan">> system.read(portfolio_cases)</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Case 1 -->
+            <div class="cyber-card p-6 rounded-lg flex flex-col h-full">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-cyber-cyan">[OPERATION]</span>
+                    <h3 class="text-lg font-bold text-white">Joint Cross-Border Patrol</h3>
+                </div>
+                <p class="text-cyber-gray text-sm flex-grow mb-4">
+                    Actively involved in the Joint Cross-Border Patrol to combat transnational wildlife crime at the Indonesia-Malaysia border (Aruk-Biawa). Collaborated with BKSDA West Kalimantan and Sarawak Forestry Corporation (SFC) to execute patrols, blockades, and community awareness programs.
+                </p>
+                <div class="flex gap-2 text-xs text-cyber-purple mt-auto">
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">Field Survey</span>
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">Inter-Agency</span>
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">GIS</span>
+                </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="cyber-card p-6 rounded-lg flex flex-col h-full">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-cyber-cyan">[INVESTIGATION]</span>
+                    <h3 class="text-lg font-bold text-white">Sanggau Pangolin Scale Case</h3>
+                </div>
+                <p class="text-cyber-gray text-sm flex-grow mb-4">
+                    Monitored and investigated the illegal trade of 106.5 kg of pangolin scales in Teraju. Supported local law enforcement with Open-Source Intelligence (OSINT) and digital forensics to map out interconnected illegal trader networks. Served as a case witness in trial.
+                </p>
+                <div class="flex gap-2 text-xs text-cyber-purple mt-auto">
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">OSINT</span>
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">Digital Forensics</span>
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">SIPP</span>
+                </div>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="cyber-card p-6 rounded-lg flex flex-col h-full">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-cyber-cyan">[INVESTIGATION]</span>
+                    <h3 class="text-lg font-bold text-white">Sintang Pangolin Scale Network</h3>
+                </div>
+                <p class="text-cyber-gray text-sm flex-grow mb-4">
+                    Conducted OSINT for profiling documents and supported covert surveillance to track an illegal trader (HLY) arriving from West Java. The intelligence gathered successfully connected the suspect to local collectors and wanted individuals in Sambas.
+                </p>
+                <div class="flex gap-2 text-xs text-cyber-purple mt-auto">
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">Covert Surveillance</span>
+                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">Intelligence Analysis</span>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="cyber-card p-6 rounded-lg flex flex-col h-full border-cyber-purple/40">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-cyber-purple">[EDUCATION]</span>
+                    <h3 class="text-lg font-bold text-white">BSc in Biology (Ecology)</h3>
+                </div>
+                <p class="text-cyber-gray text-sm flex-grow mb-4">
+                    Tanjungpura University, Pontianak (2017-2023). Conducted undergraduate thesis on the habitat characteristics of <em>Rafflesia tuan-mudae</em>. Assisted in carbon offset analysis utilizing drone imagery and freshwater species inventarisation.
+                </p>
+                <div class="flex gap-2 text-xs text-cyber-cyan mt-auto">
+                    <span class="bg-cyber-cyan/10 px-2 py-1 rounded">Ecology</span>
+                    <span class="bg-cyber-cyan/10 px-2 py-1 rounded">Research</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 max-w-6xl mx-auto px-4 border-t border-cyber-cyan/20">
+        <h2 class="text-3xl font-bold mb-10 neon-text-cyan">> analyze_competencies()</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="border border-cyber-cyan/30 p-4 rounded bg-cyber-dark hover:border-cyber-cyan transition-colors">
+                <p class="text-cyber-cyan font-bold">OSINT</p>
+                <p class="text-xs text-cyber-gray mt-1">Open-Source Intelligence</p>
+            </div>
+            <div class="border border-cyber-purple/30 p-4 rounded bg-cyber-dark hover:border-cyber-purple transition-colors">
+                <p class="text-cyber-purple font-bold">Data Analysis</p>
+                <p class="text-xs text-cyber-gray mt-1">Detail-Oriented Synthesis</p>
+            </div>
+            <div class="border border-cyber-cyan/30 p-4 rounded bg-cyber-dark hover:border-cyber-cyan transition-colors">
+                <p class="text-cyber-cyan font-bold">QGIS & R</p>
+                <p class="text-xs text-cyber-gray mt-1">Spatial & Statistical</p>
+            </div>
+            <div class="border border-cyber-purple/30 p-4 rounded bg-cyber-dark hover:border-cyber-purple transition-colors">
+                <p class="text-cyber-purple font-bold">Drone Ops</p>
+                <p class="text-xs text-cyber-gray mt-1">Aerial Mapping</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center border-t border-cyber-cyan/20 text-cyber-gray text-sm">
+        <p>STATUS: ONLINE | LOCATION: PONTIANAK, ID</p>
+        <p class="mt-2">© 2026 phileory. All systems nominal.</p>
+    </footer>
+
+    <!-- Typewriter Script -->
+    <script>
+        const words = ["Wildlife Crime Investigator", "OSINT Specialist", "Data Analyst", "Ecologist"];
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+        
+        function type() {
+            currentWord = words[i];
+            if (isDeleting) {
+                document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
+                j--;
+                if (j == 0) {
+                    isDeleting = false;
+                    i++;
+                    if (i == words.length) {
+                        i = 0;
+                    }
+                }
+            } else {
+                document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
+                j++;
+                if (j == currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000); // Pause at end of word
+                    return;
+                }
+            }
+            setTimeout(type, isDeleting ? 50 : 100);
+        }
+        
+        // Start typing effect on load
+        window.onload = function() {
+            setTimeout(type, 1000);
+        };
+    </script>
+</body>
+</html>
