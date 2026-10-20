@@ -36,13 +36,8 @@
             <a href="../index.html" class="text-xl font-bold text-[#00f0ff]">> phileory_</a>
             <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
                 <a href="../index.html#about" class="hover:text-cyber-cyan transition-colors">./about</a>
-                
-                <!-- INI YANG BERUBAH: Menu Portfolio menjadi aktif (berwarna cyan) -->
                 <a href="../Portfolio/portfolio.html" class="text-cyber-cyan">./portfolio</a>
-                
-                <!-- INI YANG BERUBAH: Menu Article menjadi tidak aktif (hanya cyan saat di-hover) -->
                 <a href="../Article/article.html" class="hover:text-cyber-cyan transition-colors">./article</a>
-                
                 <a href="../index.html#contact" class="hover:text-cyber-cyan transition-colors">./contact</a>
             </div>
         </div>
@@ -55,39 +50,83 @@
             <p class="text-cyber-gray mt-4 max-w-2xl">Complete repository of operations, OSINT investigations, and field research.</p>
         </div>
 
-        <!-- Portfolio Grid (Tambahkan kartu sebanyak yang Anda mau di sini) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Item 1 -->
-            <div class="cyber-card p-6 rounded-lg flex flex-col h-full cursor-pointer" onclick="alert('Bisa diarahkan ke halaman detail PDF/Kasus!')">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Case 1 -->
+            <div class="cyber-card p-6 rounded-lg flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
-                    <span class="text-cyber-cyan text-xs tracking-widest border border-cyber-cyan/30 px-2 py-1">[OP-ID: 2026-A]</span>
-                    <span class="text-cyber-gray text-xs">Sep 2026</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-cyber-cyan font-bold">[OPERATION]</span>
+                    </div>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-3">Joint Cross-Border Patrol</h3>
-                <p class="text-cyber-gray text-sm flex-grow mb-6">Indonesia-Malaysia border patrol targeting transnational wildlife trafficking routes. Collaborated with BKSDA & SFC.</p>
-                <div class="flex flex-wrap gap-2 text-xs text-cyber-purple">
-                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">Field Survey</span>
-                    <span class="bg-cyber-purple/10 px-2 py-1 rounded">GIS</span>
+                <p class="text-cyber-gray text-sm flex-grow mb-6">
+                    Actively involved in the Joint Cross-Border Patrol to combat transnational wildlife crime at the Indonesia-Malaysia border (Aruk-Biawa). Collaborated with BKSDA West Kalimantan and Sarawak Forestry Corporation (SFC) to execute patrols, blockades, and community awareness programs.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs text-cyber-purple mt-auto">
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">Field Survey</span>
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">Inter-Agency</span>
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">GIS</span>
                 </div>
             </div>
 
-            <!-- Item 2 -->
+            <!-- Case 2 -->
             <div class="cyber-card p-6 rounded-lg flex flex-col h-full">
                 <div class="flex justify-between items-start mb-4">
-                    <span class="text-cyber-purple text-xs tracking-widest border border-cyber-purple/30 px-2 py-1">[INV-ID: SGG-106]</span>
-                    <span class="text-cyber-gray text-xs">2025</span>
+                    <div class="flex items-center gap-3">
+                        <span class="text-cyber-cyan font-bold">[INVESTIGATION]</span>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Teraju Pangolin Syndicate</h3>
-                <p class="text-cyber-gray text-sm flex-grow mb-6">Digital forensics and OSINT leading to the interception of 106.5 kg pangolin scales.</p>
-                <div class="flex flex-wrap gap-2 text-xs text-cyber-cyan">
-                    <span class="bg-cyber-cyan/10 px-2 py-1 rounded">OSINT</span>
-                    <span class="bg-cyber-cyan/10 px-2 py-1 rounded">Forensics</span>
+                <h3 class="text-xl font-bold text-white mb-3">Sanggau Pangolin Scale Case</h3>
+                <p class="text-cyber-gray text-sm flex-grow mb-6">
+                    Monitored and investigated the illegal trade of 106.5 kg of pangolin scales in Teraju. Supported local law enforcement with Open-Source Intelligence (OSINT) and digital forensics to map out interconnected illegal trader networks. Served as a case witness in trial.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs text-cyber-purple mt-auto">
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">OSINT</span>
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">Digital Forensics</span>
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">SIPP</span>
+                </div>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="cyber-card p-6 rounded-lg flex flex-col h-full">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-cyber-cyan font-bold">[INVESTIGATION]</span>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Sintang Pangolin Scale Network</h3>
+                <p class="text-cyber-gray text-sm flex-grow mb-6">
+                    Conducted OSINT for profiling documents and supported covert surveillance to track an illegal trader (HLY) arriving from West Java. The intelligence gathered successfully connected the suspect to local collectors and wanted individuals in Sambas.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs text-cyber-purple mt-auto">
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">Covert Surveillance</span>
+                    <span class="bg-cyber-purple/10 border border-cyber-purple/30 px-2 py-1 rounded">Intelligence Analysis</span>
                 </div>
             </div>
             
-            <!-- Tempat untuk menambah item portofolio lainnya -->
+            <!-- Education -->
+            <div class="cyber-card p-6 rounded-lg flex flex-col h-full border-cyber-purple/40">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-cyber-purple font-bold">[EDUCATION]</span>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">BSc in Biology (Ecology)</h3>
+                <p class="text-cyber-gray text-sm flex-grow mb-6">
+                    Tanjungpura University, Pontianak (2017-2023). Conducted undergraduate thesis on the habitat characteristics of <em>Rafflesia tuan-mudae</em>. Assisted in carbon offset analysis utilizing drone imagery and freshwater species inventarisation.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs text-cyber-cyan mt-auto">
+                    <span class="bg-cyber-cyan/10 border border-cyber-cyan/30 px-2 py-1 rounded">Ecology</span>
+                    <span class="bg-cyber-cyan/10 border border-cyber-cyan/30 px-2 py-1 rounded">Research</span>
+                </div>
+            </div>
         </div>
     </main>
+
+    <footer class="py-8 text-center border-t border-cyber-cyan/20 text-cyber-gray text-sm">
+        <p>STATUS: ONLINE | LOCATION: PONTIANAK, ID</p>
+        <p class="mt-2">© 2026 phileory. All systems nominal.</p>
+    </footer>
 
 </body>
 </html>
