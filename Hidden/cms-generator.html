@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Generator | phileory_</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: { dark: '#050b14', cyan: '#00f0ff', purple: '#b026ff', gray: '#8a99a8' }
+                    },
+                    fontFamily: { mono: ['JetBrains Mono', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050b14; color: #e2e8f0; }
+    </style>
+</head>
+<body class="font-mono p-8 max-w-3xl mx-auto">
+
+    <div class="border border-cyber-cyan/30 bg-cyber-dark p-6 rounded-lg shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+        <h1 class="text-2xl font-bold text-cyber-cyan mb-6">> SYSTEM.WRITE_NEW_LOG()</h1>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm text-cyber-gray mb-1">Nama File (Format: atcXXX-YYYY.html)</label>
+                <input type="text" id="filename" class="w-full bg-[#0a1423] border border-cyber-cyan/30 text-white p-2 rounded focus:border-cyber-cyan focus:outline-none" placeholder="atc003-2026.html" required>
+            </div>
+            
+            <div>
+                <label class="block text-sm text-cyber-gray mb-1">Judul Artikel</label>
+                <input type="text" id="title" class="w-full bg-[#0a1423] border border-cyber-cyan/30 text-white p-2 rounded focus:border-cyber-cyan focus:outline-none" placeholder="Ketik judul di sini..." required>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm text-cyber-gray mb-1">Tanggal</label>
+                    <input type="date" id="date" class="w-full bg-[#0a1423] border border-cyber-cyan/30 text-white p-2 rounded focus:border-cyber-cyan focus:outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-sm text-cyber-gray mb-1">Tag (Opsional, pisahkan dengan koma)</label>
+                    <input type="text" id="tags" class="w-full bg-[#0a1423] border border-cyber-cyan/30 text-white p-2 rounded focus:border-cyber-cyan focus:outline-none" placeholder="OSINT, Creativity">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm text-cyber-gray mb-1">Isi Artikel (Tekan Enter untuk paragraf baru. Gunakan <b>## Spasi</b> di awal baris untuk membuat Sub-Judul/H2)</label>
+                <textarea id="content" rows="12" class="w-full bg-[#0a1423] border border-cyber-cyan/30 text-white p-2 rounded focus:border-cyber-cyan focus:outline-none" placeholder="Ketik laporan Anda di sini...&#10;&#10;## Ini adalah contoh Sub Judul&#10;Ini adalah paragraf biasa..." required></textarea>
+            </div>
+
+            <button onclick="generateHTML()" class="w-full bg-cyber-cyan text-cyber-dark font-bold py-3 rounded hover:bg-white transition-colors uppercase tracking-wider">
+                Generate & Download HTML
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function generateHTML() {
+            let filename = document.getElementById('filename').value.trim();
+            const title = document.getElementById('title').value;
+            const dateInput = document.getElementById('date').value;
+            const tagsInput = document.getElementById('tags').value;
+            const content = document.getElementById('content').value;
+
+            if (!filename) { alert("Nama file wajib diisi!"); return; }
+            if (!filename.endsWith('.html')) filename += '.html';
+
+            // Format Tanggal menjadi DD/MM/YYYY
+            let formattedDate = "";
+            if(dateInput) {
+                const [year, month, day] = dateInput.split('-');
+                formattedDate = `${day}/${month}/${year}`;
+            }
+
+            // Format Tag HTML
+            const tagsArray = tagsInput.split(',').map(tag => tag.trim()).filter(tag => tag);
+            let tagsHTML = '';
+            if (tagsArray.length > 0) {
+                tagsHTML = tagsArray.map(tag => `\n            <span>•</span>\n            <span class="text-cyber-cyan border border-cyber-cyan/30 px-2 py-0.5 rounded-full text-xs">${tag}</span>`).join('');
+            }
+
+            // Format Paragraf dan H2
+            const lines = content.split('\n').filter(line => line.trim() !== '');
+            let contentHTML = '';
+            lines.forEach(line => {
+                if (line.startsWith('## ')) {
+                    contentHTML += `        <h2>${line.replace('## ', '')}</h2>\n`;
+                } else {
+                    contentHTML += `        <p>${line}</p>\n`;
+                }
+            });
+
+            // Rakit Template Sesuai dengan atc002-2026.html
+            const htmlTemplate = `<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title} | phileory_</title>
+    <script src="https://cdn.tailwindcss.com"><\/script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { cyber: { dark: '#050b14', cyan: '#00f0ff', purple: '#b026ff', gray: '#8a99a8' } }, fontFamily: { mono: ['JetBrains Mono', 'monospace'], serif: ['Lora', 'serif'] } } } }
+    <\/script>
+    <style>
+        body { background-color: #050b14; color: #e2e8f0; }
+        .cyber-bg { background-image: linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px; background-attachment: fixed; }
+        .article-content { font-family: 'Lora', serif; font-size: 1.125rem; line-height: 1.8; color: rgba(255, 255, 255, 0.85); }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; color: #fff; margin-top: 3rem; margin-bottom: 1rem; font-weight: 700; }
+    </style>
+</head>
+<body class="font-mono antialiased cyber-bg">
+
+    <!-- Navigation & Back Button -->
+    <nav class="fixed w-full top-0 z-50 bg-cyber-dark/90 border-b border-cyber-cyan/30 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../article.html" class="text-sm font-bold text-cyber-gray hover:text-cyber-cyan transition-colors"><< Back to Journal</a>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="pt-32 pb-10 max-w-3xl mx-auto px-4 border-b border-cyber-gray/20">
+        <div class="flex items-center gap-3 text-cyber-gray text-sm mb-6">
+            <span>By Muhammad Luthfi</span>
+            <span>•</span>
+            <span>${formattedDate}</span>${tagsHTML}
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">${title}</h1>
+    </header>
+
+    <!-- Article Body -->
+    <main class="py-12 max-w-2xl mx-auto px-4 article-content">
+${contentHTML}    </main>
+
+    <footer class="py-12 text-center border-t border-cyber-cyan/20 text-cyber-gray text-sm font-mono mt-20">
+        <p>END OF LOG</p>
+    </footer>
+
+</body>
+</html>`;
+
+            // Download Logic
+            const blob = new Blob([htmlTemplate], { type: "text/html" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
